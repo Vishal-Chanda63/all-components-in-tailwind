@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.js"></script>
+
+</head>
+
+<body class="max-w-[1920px] mx-auto">
+
+    <!--=-=-=-=-=-=-=-=-=-=-=-=- CONTACT US =-=-=-=-=-=-=-=-=-=-=-= -->
+    <section id="ContactUs" class="pt-4">
+        <div class="container">
+            <div class="flex justify-center flex-col items-center ">
+                <div class="">
+                    <p class="text-black text-4xl fonr-bold text-center mb-3 md:mb-5">
+                        Contact <span class="clr_dark_green">Us</span>
+                    </p>
+                    <p class="leading-150 max-w-[550px]  text-center  mx-auto mb-5">
+                        Lorem ipsum dolor sit amet consectetur. Neque vivamus odio
+                        tristique sagittis tortor .
+                        Lorem ipsum dolor sit amet consectetur. Neque vivamus odio
+                        tristique sagittis tortor .
+                    </p>
+
+                </div>
+                <div class="flex flex-col items-center mx-auto justify-center">
+                    <form id="contactForm" class="space-y-6 w-full max-sm:min-w-[320px]">
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex flex-col">
+                                <label for="first_name" class="text-gray font-xs md:font-sm font-normal mb-1">First
+                                    Name*</label>
+                                <input id="first_name" name="first_name" type="text"
+                                    class="form-input border !border-grey outline-0  p-2 max-sm:w-full rounded-md focus:!border-green-600" placeholder="First name" />
+                                <div id="first_name_error" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="last_name" class="text-gray font-xs md:font-sm font-normal mb-1">Last
+                                    Name*</label>
+                                <input id="last_name" name="last_name" type="text"
+                                    class="form-input border border-grey outline-0 p-2 max-sm:w-full rounded-md focus:border-green-600" placeholder="Last Nmae" />
+                                <div id="last_name_error" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex flex-col">
+                                <label for="email" class="text-gray font-xs md:font-sm font-normal mb-1">Email*</label>
+                                <input id="email" name="email" type="email"
+                                    class="form-input border border-grey outline-0 p-2 max-sm:w-full rounded-md focus:border-green-600" placeholder="Email" />
+                                <div id="email_error" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="phone_number"
+                                    class="text-gray font-xs md:font-sm font-normal mb-1">Phone*</label>
+                                <input id="phone_number" name="phone_number" type="tel"
+                                    class="form-input border border-grey outline-0 p-2 max-sm:w-full rounded-md focus:border-green-600" placeholder="Phone Number" />
+                                <div id="phone_number_error" class="text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="message" class="text-gray font-xs md:font-sm font-normal mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="form-textarea max-w-[450px] p-3 outline-0 p-2 max-sm:w-full rounded-md !resize-none border border-grey focus:border-green-600"
+                                placeholder="Message"></textarea>
+                                <div id="message_error" class="text-red-500 text-sm mt-1"></div>
+
+                        </div>
+                        <button type="submit" class="btn bg-black border border-transparent rounded-lg text-white hover:bg-opacity-60 px-5 py-2">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // ======================FORM VALIDATION==============
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactForm = document.getElementById("contactForm");
+            let hasSubmitted = false;
+
+            function validateField(name, value) {
+                let errorMsg = "";
+                switch (name) {
+                    case "first_name":
+                        errorMsg = !value ? "First name is required" : "";
+                        break;
+                    case "last_name":
+                        errorMsg = !value ? "Last name is required" : "";
+                        break;
+                    case "email":
+                        errorMsg = !value
+                            ? "Email is required"
+                            : !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value)
+                                ? "Invalid email format"
+                                : "";
+                        break;
+                    case "phone_number":
+                        errorMsg = !value
+                            ? "Number is required"
+                            : !/^\d{10}$/.test(value)
+                                ? "Phone number must be 10 digits"
+                                : "";
+                        break;
+                    case "message":
+                        errorMsg = !value ? "Message is required" : "";
+                        break;
+                }
+                document.getElementById(`${name}_error`).textContent = errorMsg;
+                return !errorMsg;
+            }
+
+            contactForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                let isValid = true;
+                const formData = new FormData(contactForm);
+
+                hasSubmitted = true;
+
+                formData.forEach((value, key) => {
+                    if (!validateField(key, value.trim())) {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    console.log("Form submitted successfully:", Object.fromEntries(formData));
+                    contactForm.reset();
+                    hasSubmitted = false;
+                }
+            });
+
+            contactForm.querySelectorAll("input, textarea").forEach((input) => {
+                input.addEventListener("input", () => {
+                    if (hasSubmitted) {
+                        validateField(input.name, input.value.trim());
+                    }
+                });
+            });
+        });</script>
+
+</body>
+
+</html>

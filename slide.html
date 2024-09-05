@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiper</title>
+
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /*----- SWIPER CSS -----*/
+        .swiper-pagination {
+            transition: 0.3s opacity;
+            transition: 0.3s opacity;
+            transform: translateY(10%) !important;
+            z-index: 10;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            bottom: 5% !important;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+            background: black !important;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        #calendarDays {
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        #calendarDays.opacity-0 {
+            opacity: 0;
+        }
+
+        #profile.swiper-pagination {
+            transform: translateY(0%) !important;
+            bottom: 0% !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: black !important;
+            opacity: 1 !important;
+            width: 14px !important;
+            height: 14px !important;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin-left: 2px !important;
+            margin-right: 2px !important;
+        }
+    </style>
+    <!-- AOS ANIMATION -->
+</head>
+
+<body class="max-w-[1920px] mx-auto">
+
+
+    <!--=============================== TESTIMONIALS ================================--->
+    <section class="bg-white">
+        <div class="pt-10 relative md:pt-16 lg:pt-20 xl:pt-[160px] xl:pb-10">
+            <div class="container max-w-[1140px] mx-auto overflow-hidden px-4 lg:px-3 xl:px-0">
+                <p data-aos="fade-up"
+                    class="text-black font-medium text-3xl font-bold md:text-5xl text-center mb-3 md:mb-5 font-montserrat !leading-130">
+                    HTML Slider </p>
+
+                <div class="relative">
+                    <!-- SWIPER -->
+                    <div class="swiper-container pb-10 swiper-testimonial relative">
+                        <div class="swiper-wrapper mb-2">
+                            <!-- SWIPER SLIDE -->
+                            <div
+                                class="swiper-slide !h-auto border border-black hover:border-green transition-all duration-300 border-opacity-20 shadow-testimonials rounded-lg bg-white p-4 sm:p-5 flex flex-col">
+                                <div class="flex me-auto mb-6 gap-5">
+                                    <img class="size-12 h-12 md:size-[60px] rounded-full object-cover"
+                                        src="./assets/images/png/random.webp" alt="designer" />
+                                    <div class="flex md:gap-1 flex-col">
+                                        <p
+                                            class="text-black text-lg md:text-xl font-medium leading-150 font-montserrat">
+                                            Jacob
+                                        </p>
+                                        <p
+                                            class="text-black text-sm md:text-base font-normal leading-150 font-montserrat">
+                                            Designer
+                                        </p>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-dark-gray md:max-w-[324px] relative text-base leading-150 font-normal font-montserrat mb-6 transition">
+                                    By merging professional networking with e-commerce, we
+                                    provide a comprehensive solution for showcasing, selling,
+                                    and growing one’s creative and technical Endeavor.
+
+
+                                </p>
+                                <div class="flex gap-[3px]">
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                </div>
+                            </div>
+                            <div
+                                class="swiper-slide !h-auto border border-black hover:border-green duration-300 transition-all border-opacity-20 shadow-testimonials rounded-lg bg-white p-4 sm:p-5 flex flex-col">
+                                <div class="flex me-auto mb-6 gap-5">
+                                    <img class="size-12 h-12 md:size-[60px] rounded-full object-cover"
+                                        src="./assets/images/png/random.webp" alt="designer" />
+                                    <div class="flex md:gap-1 flex-col">
+                                        <p
+                                            class="text-black text-lg md:text-xl font-medium leading-150 font-montserrat">
+                                            Sophia
+                                        </p>
+                                        <p
+                                            class="text-black text-sm md:text-base font-normal leading-150 font-montserrat">
+                                            Video Creator
+                                        </p>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-dark-gray md:max-w-[324px] relative text-base leading-150 font-normal font-montserrat mb-6 transition">
+                                    Our platform seamlessly integrates e-commerce, enabling
+                                    creators and developers to monetize their skills and
+                                    products effortlessly. Users can sell digital products like
+                                    designs.
+
+
+                                </p>
+                                <div class="flex gap-[3px]">
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                </div>
+                            </div>
+                            <div
+                                class="swiper-slide !h-auto border border-black hover:border-green duration-300 transition-all border-opacity-20 shadow-testimonials rounded-lg bg-white p-4 sm:p-5 flex flex-col">
+                                <div class="flex me-auto mb-6 gap-5">
+                                    <img class="size-12 h-12 md:size-[60px] rounded-full object-cover"
+                                        src="./assets/images/png/random.webp" alt="designer" />
+                                    <div class="flex md:gap-1 flex-col">
+                                        <p
+                                            class="text-black text-lg md:text-xl font-medium leading-150 font-montserrat">
+                                            John
+                                        </p>
+                                        <p
+                                            class="text-black text-sm md:text-base font-normal leading-150 font-montserrat">
+                                            Programmer
+                                        </p>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-dark-gray md:max-w-[324px] relative text-base leading-150 font-normal font-montserrat mb-6 transition">
+                                    The platform also supports freelance services, allowing
+                                    professionals to offer their expertise for project-based
+                                    work with a built-in payment system. This integration
+                                    enhances.
+
+
+                                </p>
+                                <div class="flex gap-[3px]">
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                </div>
+                            </div>
+                            <div
+                                class="swiper-slide !h-auto border border-black hover:border-green duration-300 transition-all border-opacity-20 shadow-testimonials rounded-lg bg-white p-4 sm:p-5 flex flex-col">
+                                <div class="flex me-auto mb-6 gap-5">
+                                    <img class="size-12 h-12 md:size-[60px] rounded-full object-cover"
+                                        src="./assets/images/png/random.webp" alt="designer" />
+                                    <div class="flex md:gap-1 flex-col">
+                                        <p
+                                            class="text-black text-lg md:text-xl font-medium leading-150 font-montserrat">
+                                            Jacob
+                                        </p>
+                                        <p
+                                            class="text-black text-sm md:text-base font-normal leading-150 font-montserrat">
+                                            Designer
+                                        </p>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-dark-gray md:max-w-[324px] relative text-base leading-150 font-normal font-montserrat mb-6 transition">
+                                    By merging professional networking with e-commerce, we
+                                    provide a comprehensive solution for showcasing, selling,
+                                    and growing one’s creative and technical Endeavor.
+
+
+                                </p>
+                                <div class="flex gap-[3px]">
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                </div>
+                            </div>
+                            <div
+                                class="swiper-slide !h-auto border border-black hover:border-green duration-300 transition-all border-opacity-20 shadow-testimonials rounded-lg bg-white p-4 sm:p-5 flex flex-col">
+                                <div class="flex me-auto mb-6 gap-5">
+                                    <img class="size-12 h-12 md:size-[60px] rounded-full object-cover"
+                                        src="./assets/images/png/random.webp" alt="designer" />
+                                    <div class="flex md:gap-1 flex-col">
+                                        <p
+                                            class="text-black text-lg md:text-xl font-medium leading-150 font-montserrat">
+                                            John
+                                        </p>
+                                        <p
+                                            class="text-black text-sm md:text-base font-normal leading-150 font-montserrat">
+                                            Programmer
+                                        </p>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-dark-gray md:max-w-[324px] relative text-base leading-150 font-normal font-montserrat mb-6 transition">
+                                    The platform also supports freelance services, allowing
+                                    professionals to offer their expertise for project-based
+                                    work with a built-in payment system. This integration
+                                    enhances.
+
+
+                                </p>
+                                <div class="flex gap-[3px]">
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                    <img src="./assets/images/svg/star-icon.svg" class="size-5 md:size-6"
+                                        alt="star-icon" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination !bottom-[4px] !text-center !absolute"></div>
+                    </div>
+                </div>
+                <button aria-label="prev"
+                    class="size-9 bg-green bg-opacity-10 hover:bg-opacity-100 swiper_button_prev absolute top-1/2 left-[6.5%] z-40 max-custom-xl:hidden xl:translate-y-[140%] duration-300 rounded-full group flex justify-center items-center">
+                    <svg class="rotate-180 flex justify-center items-center" width="8" height="13" viewBox="0 0 8 13"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="group-hover:fill-white fill-green duration-300"
+                            d="M1.2842 0.295798C1.37716 0.20207 1.48777 0.127676 1.60962 0.0769072C1.73148 0.0261385 1.86219 0 1.9942 0C2.12621 0 2.25692 0.0261385 2.37878 0.0769072C2.50064 0.127676 2.61124 0.20207 2.7042 0.295798L7.7042 5.2958C7.79793 5.38876 7.87232 5.49936 7.92309 5.62122C7.97386 5.74308 8 5.87379 8 6.0058C8 6.13781 7.97386 6.26852 7.92309 6.39038C7.87232 6.51223 7.79793 6.62284 7.7042 6.7158L2.7042 11.7158C2.61124 11.8095 2.50064 11.8839 2.37878 11.9347C2.25692 11.9855 2.12621 12.0116 1.9942 12.0116C1.86219 12.0116 1.73148 11.9855 1.60962 11.9347C1.48777 11.8839 1.37716 11.8095 1.2842 11.7158C1.19047 11.6228 1.11608 11.5122 1.06531 11.3904C1.01454 11.2685 0.988403 11.1378 0.988403 11.0058C0.988403 10.8738 1.01454 10.7431 1.06531 10.6212C1.11608 10.4994 1.19047 10.3888 1.2842 10.2958L5.5842 6.0058L1.2842 1.7158C1.19047 1.62284 1.11608 1.51223 1.06531 1.39038C1.01454 1.26852 0.988403 1.13781 0.988403 1.0058C0.988403 0.873786 1.01454 0.743081 1.06531 0.621222C1.11608 0.499362 1.19047 0.388761 1.2842 0.295798Z"
+                            fill="none" />
+                    </svg>
+                </button>
+                <button aria-label="next"
+                    class="size-9 bg-green bg-opacity-10 hover:bg-opacity-100 swiper_button_next absolute top-1/2 right-[6.5%] z-30 max-custom-xl:hidden xl:translate-y-[140%] duration-300 rounded-full group flex justify-center items-center">
+                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="group-hover:fill-white fill-green duration-300"
+                            d="M1.2842 0.295798C1.37716 0.20207 1.48777 0.127676 1.60962 0.0769072C1.73148 0.0261385 1.86219 0 1.9942 0C2.12621 0 2.25692 0.0261385 2.37878 0.0769072C2.50064 0.127676 2.61124 0.20207 2.7042 0.295798L7.7042 5.2958C7.79793 5.38876 7.87232 5.49936 7.92309 5.62122C7.97386 5.74308 8 5.87379 8 6.0058C8 6.13781 7.97386 6.26852 7.92309 6.39038C7.87232 6.51223 7.79793 6.62284 7.7042 6.7158L2.7042 11.7158C2.61124 11.8095 2.50064 11.8839 2.37878 11.9347C2.25692 11.9855 2.12621 12.0116 1.9942 12.0116C1.86219 12.0116 1.73148 11.9855 1.60962 11.9347C1.48777 11.8839 1.37716 11.8095 1.2842 11.7158C1.19047 11.6228 1.11608 11.5122 1.06531 11.3904C1.01454 11.2685 0.988403 11.1378 0.988403 11.0058C0.988403 10.8738 1.01454 10.7431 1.06531 10.6212C1.11608 10.4994 1.19047 10.3888 1.2842 10.2958L5.5842 6.0058L1.2842 1.7158C1.19047 1.62284 1.11608 1.51223 1.06531 1.39038C1.01454 1.26852 0.988403 1.13781 0.988403 1.0058C0.988403 0.873786 1.01454 0.743081 1.06531 0.621222C1.11608 0.499362 1.19047 0.388761 1.2842 0.295798Z"
+                            fill="none" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!--============================ swiper SCRIPT ============================-->
+    <script>
+        const swiper = new Swiper(".swiper-testimonial", {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper_button_next",
+                prevEl: ".swiper_button_prev",
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+            },
+        });
+    </script>
+
+
+</body>
+
+</html>

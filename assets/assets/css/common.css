@@ -1,0 +1,44 @@
+body::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background-color: var(--light-green);
+  border-radius: 10px;
+  min-height: 562px;
+}
+
+#profile::-webkit-scrollbar-track {
+  background-color: var(--black);
+  border-radius: 100px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: var(--green);
+}
+
+
+
+  
+/* ================ NAVBAR ================ */
+.line-1-active {
+  transform: rotate(-45deg) translateY(-50%) !important;
+  border-radius: 12px;
+  position: absolute !important;
+  width: 100% !important;
+  top: 50% !important;
+}
+
+.line-2-active {
+  opacity: 0 !important;
+}
+
+.line-3-active {
+  transform: rotate(45deg) translateX(-0.5px) translateY(-21%) !important;
+  border-radius: 12px;
+  position: absolute !important;
+  width: 100% !important;
+  top: 50% !important;
+}
